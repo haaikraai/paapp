@@ -1,0 +1,36 @@
+table {
+  display: table;
+  padding: 2px;
+  margin: 5px auto;
+  width: 95%;
+  border-collapse: collapse;
+}
+
+table tr {
+  height: 40px;
+  text-align: center;
+}
+
+table td, th {
+  border: 1px solid rgb(187, 36, 187);
+}
+
+table td {
+  cursor: text;
+}
+
+table td:hover {
+  background-color: aquamarine;
+}
+
+/* .spreadsheetstyls {
+  padding: 10px;
+  margin: 2px;
+  border: 1px solid red;
+  align-items: center;
+  justify-content: center;
+}
+
+.spreadsheetstyls:hover {
+  cursor: text;
+} */

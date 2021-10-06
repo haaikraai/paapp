@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let head of tblHeaders">{{ head }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of mngData" (click)="selectCell(data.code)">
+      <td mat>{{ data.code }}</td>
+      <td contenteditable="true">{{ data.name }}</td>
+      <!-- <td>
+        <mat-select>
+          <mat-option *ngFor="let status of statusDropValues" [value]="status">
+            {{ status }}
+          </mat-option>
+        </mat-select>
+      </td> -->
+    </tr>
+  </tbody>
+</table>

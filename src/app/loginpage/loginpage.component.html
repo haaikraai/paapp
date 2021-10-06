@@ -1,0 +1,21 @@
+<form #loginForm ngSubmit class="full-width">
+  <mat-form-field appearance="legacy">
+    <div>
+      <mat-label>Enter Username</mat-label>
+      <input
+        matInput
+
+        #username
+        placeholder="select username"
+        ngModel
+        name="user"
+      />
+      <mat-hint>
+        <strong>Please enter username</strong>
+      </mat-hint>
+    </div>
+    </mat-form-field>
+    <div class="btnstyle">
+      <button mat-raised-button color="primary" type="submit" (click)="onLogin(username)">Login</button>
+    </div>
+</form>
