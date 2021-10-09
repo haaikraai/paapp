@@ -17,8 +17,7 @@ export class ManagerComponent implements OnInit {
   loadedProjects: Project[] = [];
   colheaders: string[] = ['Job Code', 'Project Name','Status','Department','Project NOtes','Workers'];
 
-  loadedCell: string = '';
-
+  loadedCell!: Project;
   constructor(private projectSrv: ProjectsService, private UserSrv: UserService, private editDialogue: MatDialog) {
   }
 
@@ -28,8 +27,9 @@ export class ManagerComponent implements OnInit {
     // console.log(this.loadedProjects[0].)
   }
 
-  onEdit() {
-    console.log(this.loadedCell);
+  onEdit(selectedProject: Project) {
+    console.log('from right component');
+    console.log(selectedProject);
     // let dialogRes = this.editDialogue.open(EditprojectdialogComponent, {
     //   data: {code: "projcode", projname: "Project 7"}
     // })

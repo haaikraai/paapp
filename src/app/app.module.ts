@@ -17,9 +17,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+
 import { NavguideComponent } from './navguide/navguide.component';
 import { NotesComponent } from './notes/notes.component';
 import { MatDialogModule } from '@angular/material/dialog';
+
 import { EditprojectdialogComponent } from './editprojectdialog/editprojectdialog.component';
 // import { WorkerspreadtableComponent } from './workerspreadtable/workerspreadtable.component';
 // import { MatSelectModule } from '@angular/material/select'
@@ -47,7 +51,9 @@ import { EditprojectdialogComponent } from './editprojectdialog/editprojectdialo
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

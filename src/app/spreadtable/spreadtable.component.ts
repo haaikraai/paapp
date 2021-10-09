@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ProjectsService } from '../projects.service';
 import { Project, projectStatus, projectDepartments } from '../projects.model';
 import { UserService } from '../user.service';
@@ -14,6 +14,7 @@ export class SpreadtableComponent implements OnInit {
   @Input() tblHeaders: string[] = [];
   @Input() usrData: [{}] = [{}];
   @Input() mngData: Project[] = [];
+  @Output() cellEdit = new EventEmitter;
 
 
   selectedCell!: HTMLElement;
@@ -65,5 +66,6 @@ export class SpreadtableComponent implements OnInit {
     console.log(cell.textContent, rowID);
     this.selectedProject = this.projectSrv.getProjectById(rowID);
     console.log(this.selectedProject);
+    this.cellEdit.emit(this.selectedProject);
   }
 }
