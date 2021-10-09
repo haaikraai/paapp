@@ -1,20 +1,9 @@
 <app-toolbar>
   <nav mat-tab-nav-bar>
-    <!-- <mat-label mat-tab-link [routerLink]="">Projects</mat-label> -->
-    <!-- <mat-label mat-tab-link>Workers</mat-label> -->
+    <span>
+    <mat-label mat-tab-link routerLink="manageprojects">Projects</mat-label>
+    <mat-label mat-tab-link routerLink="manageworkers">Workers</mat-label>
+  </span>
   </nav>
 </app-toolbar>
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>title</mat-card-title>
-    <mat-card-subtitle>subtitle</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <app-spreadtable [tblHeaders]="colheaders" [mngData]="loadedProjects"></app-spreadtable>
-  </mat-card-content>
-  <mat-card-actions>
-    <!-- <button mat-raised-button color="primary" (click)="cellEdit(loadedCell)">Add</button> -->
-    <button mat-raised-button color="primary" (cellEdit)="onEdit(loadedCell)">Remove</button>
-  </mat-card-actions>
-  <mat-card-footer>Testing the end</mat-card-footer>
-</mat-card>
+<router-outlet></router-outlet>

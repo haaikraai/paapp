@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { WorkerComponent } from './worker/worker.component';
-import { ManagerComponent } from './manager/manager.component';
 import { SpreadtableComponent } from './spreadtable/spreadtable.component';
 import { WorkerSpreadtableComponent } from './workerspreadtable/workerspreadtable.component';
 import { NavguideComponent } from './navguide/navguide.component';
 import { NotesComponent } from './notes/notes.component';
+import { ProjectsComponent } from './manager/projects/projects.component';
+import { WorkersComponent } from './manager/workers/workers.component';
+import { ManagerComponent } from './manager/manager.component';
 
 const routes: Routes = [
   {
@@ -19,12 +21,18 @@ const routes: Routes = [
     component: LoginpageComponent
   },
   {
-    path: 'worker',
-    component: WorkerComponent
-  },
-  {
     path: 'admin',
-    component: ManagerComponent
+    component: ManagerComponent,
+    children: [
+      {
+        path: 'manageprojects',
+        component: ProjectsComponent
+      },
+      {
+        path: 'manageworkers',
+        component: WorkersComponent
+      }
+    ]
   },
   {
     path: 'table',

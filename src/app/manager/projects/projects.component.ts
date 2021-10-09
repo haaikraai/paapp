@@ -1,23 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Project } from '../projects.model';
-import { ProjectsService } from '../projects.service';
-import { UserService } from '../user.service';
-// import { EditprojectdialogComponent } from '../editprojectdialog/editprojectdialog.component';
-import { SpreadtableComponent } from '../spreadtable/spreadtable.component';
+import { Project } from 'src/app/projects.model';
+import { ProjectsService } from 'src/app/projects.service';
+import { UserService } from 'src/app/user.service';
 
 @Component({
-  selector: 'app-manager',
-  templateUrl: './manager.component.html',
-  styleUrls: ['./manager.component.css']
+  selector: 'app-projects',
+  templateUrl: './projects.component.html',
+  styleUrls: ['./projects.component.css']
 })
+export class ProjectsComponent implements OnInit {
 
-export class ManagerComponent implements OnInit {
+  // @Output()
 
   loadedProjects: Project[] = [];
   colheaders: string[] = ['Job Code', 'Project Name','Status','Department','Project NOtes','Workers'];
 
-  loadedCell!: Project;
+  loadedProject!: Project;
   constructor(private projectSrv: ProjectsService, private UserSrv: UserService, private editDialogue: MatDialog) {
   }
 
@@ -35,4 +34,13 @@ export class ManagerComponent implements OnInit {
     // })
   }
 
+  onRemove() {
+    this.projectSrv.removeProject(this.loadedProject);
+  }
+
+  onSelect(selectedProject: Project) {
+    console.log('selected Project Row');
+    console.log(selectedProject);
+    this.loadedProject = selectedProject;
+  }
 }

@@ -7,16 +7,16 @@
   <tr mat-row *matRowDef="let row; columns: ['column'];"></tr>
 </table> -->
 
-<table mat-table>
+<table #tbls mat-table>
   <thead>
     <tr mat-header-row>
       <th mat-header-cell *ngFor="let head of tblHeaders">{{ head }}</th>
     </tr>
   </thead>
   <tbody>
-    <tr mat-row *ngFor="let data of mngData">
+    <tr mat-row *ngFor="let data of mngData" (click)="onClickCell(data)">
       <!-- <td #pcode mat-cell (dblclick)="onClickCell(pcode)">{{ data.code }}</td> -->
-      <td #pcode mat-cell (dblclick)="onClickCell(pcode)">
+      <td #pcode mat-cell>
         <input type="text" [value]="data.code" />
       </td>
       <td #pname mat-cell (dblclick)="onEditCell(pname, pcode.innerHTML)">
@@ -75,5 +75,6 @@
         </mat-form-field>
       </td>
     </tr>
+    <button (click)="onApplyChanges(tbls)">Apply Functionality (tydelik)</button>
   </tbody>
 </table>

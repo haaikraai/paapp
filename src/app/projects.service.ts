@@ -92,6 +92,19 @@ export class ProjectsService {
     return foundproject.workersById.filter((projectWorker) => (
       userIds.includes(projectWorker)
     ));
-
   }
+
+  removeProject(project: Project) {
+    const projindex = this.projects.findIndex((p) =>
+      p.code === project.code);
+
+    let removedlist = [...this.projects];
+
+
+    removedlist.splice(projindex, 1);
+    console.log('new project removed list');
+    console.log(removedlist);
+    this.projects.splice(projindex, 1);
+  }
+
 }

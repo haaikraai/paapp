@@ -12,12 +12,11 @@ import { User } from '../user.model';
 export class SpreadtableComponent implements OnInit {
 
   @Input() tblHeaders: string[] = [];
-  @Input() usrData: [{}] = [{}];
+  @Input() usrData: User[] = [];
   @Input() mngData: Project[] = [];
-  @Output() cellEdit = new EventEmitter;
-
-
-  selectedCell!: HTMLElement;
+  @Input() tblData!: Array<any>;
+  @Input() tableType: 'projects' | 'workers' | 'user' = 'user';
+  @Output() cellSelect = new EventEmitter<Project>();
 
   selectedProject!: Project;
   // statusDropValues = Object.keys(projectStatus);
@@ -47,13 +46,15 @@ export class SpreadtableComponent implements OnInit {
     console.log(this.statusDropValues);
   }
 
-  onClickCell(cell: HTMLElement) {
+  onClickCell(cell: Project) {
     // this.selectedCell = cell;
     // console.log(this.selectedCell);
-    // let cellBlock = cell;
+    let cellBlock = cell;
     // console.log(cell.contentEditable);
-    console.log(cell);
-    cell.setAttribute('contenteditable', !cell.isContentEditable as unknown as string);
+    console.log(cellBlock);
+    this.cellSelect.emit(cellBlock);
+    // console.log(cellBlock.target.value);
+    // cell.setAttribute('contenteditable', !cell.isContentEditable as unknown as string);
     // cellBlock.rem
     // console.log((<HTMLElement>cell.target).innerHTML);
     // console.log(<HTMLElement>cellBlock.innerHtML);
@@ -66,6 +67,11 @@ export class SpreadtableComponent implements OnInit {
     console.log(cell.textContent, rowID);
     this.selectedProject = this.projectSrv.getProjectById(rowID);
     console.log(this.selectedProject);
-    this.cellEdit.emit(this.selectedProject);
+    // this.cellSelect.emit(this.selectedProject);
+  }
+
+  onApplyChanges(table: HTMLTableElement) {
+    this.mngData = this.projectSrv.getProjects();
+    alert('Update Table Manually, gotta go into Reactive form field and observables. Ez stuffs\nToets maar met die remove\nDie add natuurlik baie makliker');
   }
 }

@@ -23,8 +23,10 @@ import { MatCardModule } from '@angular/material/card';
 import { NavguideComponent } from './navguide/navguide.component';
 import { NotesComponent } from './notes/notes.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ProjectsComponent } from './manager/projects/projects.component';
+import { WorkersComponent } from './manager/workers/workers.component';
 
-import { EditprojectdialogComponent } from './editprojectdialog/editprojectdialog.component';
+// import { EditprojectdialogComponent } from './editprojectdialog/editprojectdialog.component';
 // import { WorkerspreadtableComponent } from './workerspreadtable/workerspreadtable.component';
 // import { MatSelectModule } from '@angular/material/select'
 
@@ -38,7 +40,8 @@ import { EditprojectdialogComponent } from './editprojectdialog/editprojectdialo
     ToolbarComponent,
     NavguideComponent,
     NotesComponent,
-    EditprojectdialogComponent
+    ProjectsComponent,
+    WorkersComponent
   ],
   imports: [
     BrowserModule,
