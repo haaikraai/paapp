@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WorkerspreadtableComponent } from './workerspreadtable.component';
+import { WorkerSpreadtableComponent } from './workerspreadtable.component';
 
 describe('WorkerspreadtableComponent', () => {
-  let component: WorkerspreadtableComponent;
-  let fixture: ComponentFixture<WorkerspreadtableComponent>;
+  let component: WorkerSpreadtableComponent;
+  let fixture: ComponentFixture<WorkerSpreadtableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WorkerspreadtableComponent ]
+      declarations: [ WorkerSpreadtableComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WorkerspreadtableComponent);
+    fixture = TestBed.createComponent(WorkerSpreadtableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

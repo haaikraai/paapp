@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { WorkerComponent } from './worker/worker.component';
 import { SpreadtableComponent } from './spreadtable/spreadtable.component';
-import { WorkerSpreadtableComponent } from './workerspreadtable/workerspreadtable.component';
 import { NavguideComponent } from './navguide/navguide.component';
 import { NotesComponent } from './notes/notes.component';
 import { ProjectsComponent } from './manager/projects/projects.component';
@@ -14,11 +13,11 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'quick',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'login',
-    component: LoginpageComponent
+    component: LoginpageComponent,
   },
   {
     path: 'admin',
@@ -26,30 +25,31 @@ const routes: Routes = [
     children: [
       {
         path: 'manageprojects',
-        component: ProjectsComponent
+        component: ProjectsComponent,
       },
       {
         path: 'manageworkers',
-        component: WorkersComponent
-      }
-    ]
+        component: WorkersComponent,
+      },
+    ],
   },
   {
     path: 'table',
-    component: SpreadtableComponent
+    component: SpreadtableComponent,
   },
   {
     path: 'quick',
-    component: NavguideComponent
+    component: NavguideComponent,
   },
   {
     path: 'notes',
-    component: NotesComponent
+    component: NotesComponent,
   },
   {
-    path: 'worker/:id',
-    component: WorkerComponent
-  }
+    path: 'worker',
+    component: WorkerComponent,
+    children: [{ path: 'worker/:id', component: WorkerComponent }],
+  },
 ];
 
 @NgModule({
