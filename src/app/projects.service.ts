@@ -94,7 +94,7 @@ export class ProjectsService {
     ));
   }
 
-  removeProject(project: Project) {
+  removeProject(project: Project): Project[] {
     const projindex = this.projects.findIndex((p) =>
       p.code === project.code);
 
@@ -105,6 +105,7 @@ export class ProjectsService {
     console.log('new project removed list');
     console.log(removedlist);
     this.projects.splice(projindex, 1);
+    return [...this.projects];
   }
 
 }

@@ -8,9 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { WorkerComponent } from './worker/worker.component';
 import { ManagerComponent } from './manager/manager.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { NavguideComponent } from './navguide/navguide.component';
+import { NotesComponent } from './notes/notes.component';
+import { ProjectsComponent } from './manager/projects/projects.component';
+import { WorkersComponent } from './manager/workers/workers.component';
 
 import { MatmodulesModule } from './matmodules/matmodules.module';
-import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -19,12 +23,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
-
-import { NavguideComponent } from './navguide/navguide.component';
-import { NotesComponent } from './notes/notes.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ProjectsComponent } from './manager/projects/projects.component';
-import { WorkersComponent } from './manager/workers/workers.component';
+
+import { WorkertableComponent } from './manager/workertable/workertable.component';
+
+
 
 // import { EditprojectdialogComponent } from './editprojectdialog/editprojectdialog.component';
 // import { WorkerspreadtableComponent } from './workerspreadtable/workerspreadtable.component';
@@ -41,7 +44,8 @@ import { WorkersComponent } from './manager/workers/workers.component';
     NavguideComponent,
     NotesComponent,
     ProjectsComponent,
-    WorkersComponent
+    WorkersComponent,
+    WorkertableComponent
   ],
   imports: [
     BrowserModule,

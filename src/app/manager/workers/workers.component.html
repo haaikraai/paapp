@@ -5,7 +5,7 @@
     <mat-card-subtitle>more meh stuff for SEO syntax</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <app-spreadtable [tblHeaders]="colheaders" [tblData]="allWorkers" (cellSelect)="onSelect()"></app-spreadtable>
+    <app-workertable [tblHeaders]="colheaders" [usrData]="allWorkers" (cellSelect)="onSelect()"></app-workertable>
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="primary">Add</button>

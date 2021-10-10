@@ -1,0 +1,83 @@
+<!-- <table mat-table #table [dataSource]="dataSource">
+  <ng-container matColumnDef="column">
+    <th mat-header-cell *matHeaderCellDef> header </th>
+    <td mat-cell *matCellDef="let row"> {{row.column}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="['column']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['column'];"></tr>
+</table> -->
+
+<table #tbls mat-table>
+  <thead>
+    <tr mat-header-row>
+      <th mat-header-cell *ngFor="let head of tblHeaders">{{ head }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mat-row *ngFor="let user of usrData" (click)="onClickCell(user)">
+      <!-- <td #pcode mat-cell (dblclick)="onClickCell(pcode)">{{ data.code }}</td> -->
+      <td #pcode mat-cell>
+        <input type="text" [value]="user.userId" />
+      </td>
+      <td #pname mat-cell (dblclick)="onEditCell(pname, pcode.innerHTML)">
+        {{ user.name }}
+      </td>
+      <td #pname mat-cell (dblclick)="onEditCell(pname, pcode.innerHTML)">
+        {{ user.name }}
+      </td>
+      <td>
+        <!-- <mat-select>
+          <mat-option *ngFor="let projdata of mngData" [value]="projdata.status">
+            {{ projdata.status }}
+          </mat-option>
+        </mat-select> -->
+        <mat-form-field>
+          <!-- {{ data.status }} -->
+
+          <mat-select [(value)]="user.projects">
+            <mat-select-trigger>{{ user.projects }}</mat-select-trigger>
+            <mat-option
+              *ngFor="let project of projectDropValues"
+              [value]="project"
+            >
+              {{ project }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+
+      <!-- <td>
+        <mat-form-field>
+
+          <mat-select [(value)]="data.department">
+            <mat-select-trigger>{{ data.department }}</mat-select-trigger>
+            <mat-option
+              *ngFor="let projDept of departmentDropValues"
+              [value]="projDept"
+            >
+              {{ projDept }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td> -->
+      <td>
+        <textarea name="" id="projnotes" cols="8" rows="3">Todo expand on click</textarea>
+      </td>
+      <!-- <td>
+        <mat-form-field>
+
+          <mat-select [(value)]="data.workersById" multiple>
+            <mat-select-trigger>{{ data.workersById }}</mat-select-trigger>
+            <mat-option
+              *ngFor="let workers of workerDropValues"
+              [value]="workers"
+            >
+              {{ workers }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr> -->
+    <button (click)="onApplyChanges(tbls)">Apply Functionality (tydelik)</button>
+  </tbody>
+</table>

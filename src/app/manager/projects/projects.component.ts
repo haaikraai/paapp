@@ -11,8 +11,6 @@ import { UserService } from 'src/app/user.service';
 })
 export class ProjectsComponent implements OnInit {
 
-  // @Output()
-
   loadedProjects: Project[] = [];
   colheaders: string[] = ['Job Code', 'Project Name','Status','Department','Project NOtes','Workers'];
 
@@ -34,8 +32,10 @@ export class ProjectsComponent implements OnInit {
     // })
   }
 
-  onRemove() {
-    this.projectSrv.removeProject(this.loadedProject);
+  onRemove(project: Project) {
+    console.log('to remove: ');
+    console.log(project);
+    this.projectSrv.removeProject(project);
   }
 
   onSelect(selectedProject: Project) {
