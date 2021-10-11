@@ -48,8 +48,13 @@ const routes: Routes = [
   {
     path: 'worker',
     component: WorkerComponent,
-    children: [{ path: 'worker/:id', component: WorkerComponent }],
-  },
+    children: [
+      {
+        path: ':id',
+        component: WorkerComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({

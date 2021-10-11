@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { User } from '../user.model';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-loginpage',
@@ -8,9 +10,14 @@ import { Router } from '@angular/router';
 })
 export class LoginpageComponent implements OnInit {
 
-  constructor(private routing: Router) { }
+  public allUsers: User[] = [];
+  public selectedUserId: string = '';
+
+  constructor(private routing: Router, private route: ActivatedRoute, private userSrv: UserService ) {}
 
   ngOnInit() {
+    this.allUsers = this.userSrv.getUsers;
+    console.log(this.allUsers);
   }
 
   onLogin(formData: HTMLInputElement) {
@@ -18,6 +25,14 @@ export class LoginpageComponent implements OnInit {
     console.log('submitting');
     console.log(formData.value);
     this.routing.navigateByUrl('worker');
+  }
+
+  onSubmit(userId: string) {
+    console.log(userId);
+    setTimeout(() => {
+      console.log(userId);
+    },5000);
+    this.routing.navigate(['.','worker',userId]);
   }
 
 }

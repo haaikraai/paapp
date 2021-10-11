@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 import { WorkertableComponent } from './manager/workertable/workertable.component';
 
@@ -31,7 +33,6 @@ import { WorkertableComponent } from './manager/workertable/workertable.componen
 
 // import { EditprojectdialogComponent } from './editprojectdialog/editprojectdialog.component';
 // import { WorkerspreadtableComponent } from './workerspreadtable/workerspreadtable.component';
-// import { MatSelectModule } from '@angular/material/select'
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { WorkertableComponent } from './manager/workertable/workertable.componen
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatmodulesModule,
     MatToolbarModule,
     MatButtonModule,
@@ -60,7 +62,8 @@ import { WorkertableComponent } from './manager/workertable/workertable.componen
     MatSelectModule,
     MatDialogModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

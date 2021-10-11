@@ -1,8 +1,8 @@
 <app-toolbar>
   <nav mat-tab-nav-bar>
     <span>
-    <mat-label mat-tab-link routerLink="manageprojects">Projects</mat-label>
-    <mat-label mat-tab-link routerLink="manageworkers">Workers</mat-label>
+    <mat-label mat-tab-link routerLink="manageprojects" (click)="activepage='projects'" [active]="activepage == 'projects'">Projects</mat-label>
+    <mat-label mat-tab-link routerLink="manageworkers" (click)="activepage='workers'" [active]="activepage == 'workers'">Workers</mat-label>
   </span>
   </nav>
 </app-toolbar>

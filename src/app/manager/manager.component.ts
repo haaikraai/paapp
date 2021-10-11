@@ -14,6 +14,7 @@ import { SpreadtableComponent } from '../spreadtable/spreadtable.component';
 
 export class ManagerComponent implements OnInit {
 
+  activepage: string = 'projects';
   loadedProjects: Project[] = [];
   colheaders: string[] = ['Job Code', 'Project Name','Status','Department','Project NOtes','Workers'];
 

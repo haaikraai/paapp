@@ -1,9 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Project, projectStatus, projectDepartments } from 'src/app/projects.model';
-import { ProjectsService } from 'src/app/projects.service';
-import { User } from 'src/app/user.model';
-import { UserService } from 'src/app/user.service';
+import { Project, projectStatus, projectDepartments } from '../../projects.model';
+import { ProjectsService } from '../../projects.service';
+import { User } from '../../user.model'
+import { UserService } from '../../user.service';
 
+/*
+MANAGER Table to manage workers
+*/
 @Component({
   selector: 'app-workertable',
   templateUrl: './workertable.component.html',

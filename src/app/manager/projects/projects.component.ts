@@ -1,8 +1,8 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Project } from 'src/app/projects.model';
-import { ProjectsService } from 'src/app/projects.service';
-import { UserService } from 'src/app/user.service';
+import { Project } from '../../projects.model';
+import { ProjectsService } from '../../projects.service';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-projects',

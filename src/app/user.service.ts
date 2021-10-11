@@ -14,12 +14,14 @@ export class UserService {
       userId: '1',
       name: 'boet',
       role: 'manager',
+      costRate: 15,
+      billingRate: 14,
       projects: ['p1', 'p2'],
       loggedIn: true
     },
-    new User('2', 'sannie', 'worker', false, ['p1', 'p3']),
-    new User('3', 'klaas', 'worker', false, ['p3']),
-    new User('4', 'baas', 'manager', true, ['p2', 'p3'])
+    new User('2', 'sannie', 'worker', 10, 20, ['p1', 'p3']),
+    new User('3', 'klaas', 'worker', 50, 60,  ['p3']),
+    new User('4', 'baas', 'manager', 12, 25, ['p2', 'p3'])
 ];
 
   constructor(private projectsSrv: ProjectsService) {
@@ -36,7 +38,7 @@ export class UserService {
       user.userId === id;
     });
     if (userFound) return userFound;
-    else return new User('0', 'noone', 'manager', true, ['']);
+    else return User.noUser();
   }
 
   addProject(userId: string, projectId: string) {

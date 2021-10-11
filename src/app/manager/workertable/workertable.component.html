@@ -34,15 +34,7 @@
         <mat-form-field>
           <!-- {{ data.status }} -->
 
-          <mat-select [(value)]="user.projects">
-            <mat-select-trigger>{{ user.projects }}</mat-select-trigger>
-            <mat-option
-              *ngFor="let project of projectDropValues"
-              [value]="project"
-            >
-              {{ project }}
-            </mat-option>
-          </mat-select>
+          <input matInput type="number">
         </mat-form-field>
       </td>
 
@@ -61,7 +53,7 @@
         </mat-form-field>
       </td> -->
       <td>
-        <textarea name="" id="projnotes" cols="8" rows="3">Todo expand on click</textarea>
+        <input type="number">
       </td>
       <!-- <td>
         <mat-form-field>
@@ -78,6 +70,7 @@
         </mat-form-field>
       </td>
     </tr> -->
-    <button (click)="onApplyChanges(tbls)">Apply Functionality (tydelik)</button>
+
   </tbody>
+  <button (click)="onApplyChanges(tbls)">Apply Functionality (tydelik)</button>
 </table>
