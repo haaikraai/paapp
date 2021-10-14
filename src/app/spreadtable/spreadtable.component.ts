@@ -70,6 +70,10 @@ export class SpreadtableComponent implements OnInit {
     // this.cellSelect.emit(this.selectedProject);
   }
 
+  isInProject(): boolean {
+    return true;
+  }
+
   onApplyChanges(table: HTMLTableElement) {
     this.mngData = this.projectSrv.getProjects();
     alert('Update Table Manually, gotta go into Reactive form field and observables. Ez stuffs\nToets maar met die remove\nDie add natuurlik baie makliker');

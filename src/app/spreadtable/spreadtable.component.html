@@ -19,7 +19,7 @@
       <td #pcode mat-cell>
         <input type="text" [value]="data.code" />
       </td>
-      <td #pname mat-cell (dblclick)="onEditCell(pname, pcode.innerHTML)">
+      <td #pname mat-cell (dblclick)="onEditCell(pname, pcode.innerHTML)" contenteditable="true">
         {{ data.name }}
       </td>
       <td>
@@ -65,12 +65,13 @@
 
           <mat-select [(value)]="data.workersById" multiple>
             <mat-select-trigger>{{ data.workersById }}</mat-select-trigger>
-            <mat-option
+            <option matOption
               *ngFor="let workers of workerDropValues"
               [value]="workers"
+
             >
               {{ workers }}
-            </mat-option>
+            </option>
           </mat-select>
         </mat-form-field>
       </td>
@@ -78,3 +79,16 @@
     <button (click)="onApplyChanges(tbls)">Apply Functionality (tydelik)</button>
   </tbody>
 </table>
+
+
+<td>
+
+  <mat-checkbox
+
+    *ngFor="let workers of workerDropValues"
+    value="some"
+
+  >
+    {{ workers }}
+  </mat-checkbox>
+</td>

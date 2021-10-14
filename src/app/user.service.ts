@@ -35,7 +35,7 @@ export class UserService {
   getUserById(id: string) {
     const userFound = this.users.find((user) => {
       console.log('ermburm?');
-      user.userId === id;
+      return user.userId === id;
     });
     if (userFound) return userFound;
     else return User.noUser();

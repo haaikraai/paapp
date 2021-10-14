@@ -28,11 +28,20 @@ export class LoginpageComponent implements OnInit {
   }
 
   onSubmit(userId: string) {
-    console.log(userId);
-    setTimeout(() => {
-      console.log(userId);
-    },5000);
+    // console.log(userId);
+
+    // setTimeout(() => {
+    //   console.log(userId);
+    // },5000);
+
+    if (this.userSrv.getUserById(userId).role == 'worker') {
+      console.log('navigating to', './worker/',userId);
     this.routing.navigate(['.','worker',userId]);
+    }
+    if (this.userSrv.getUserById(userId).role == 'manager') {
+      this.routing.navigate(['.','admin']);
+    }
+
   }
 
 }

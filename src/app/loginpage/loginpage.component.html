@@ -7,7 +7,7 @@
   <mat-form-field appearance="legacy">
     <mat-label>Enter Username</mat-label>
 
-    <mat-select [(value)]="selectedUserId">
+    <mat-select matInput [(value)]="selectedUserId">
       <mat-select-trigger>{{ selectedUserId }}</mat-select-trigger>
 
       <mat-option *ngFor="let user of allUsers" [value]="user.userId">

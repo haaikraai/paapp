@@ -46,14 +46,14 @@ const routes: Routes = [
     component: NotesComponent,
   },
   {
-    path: 'worker',
+    path: 'worker/:id',
     component: WorkerComponent,
-    children: [
-      {
-        path: ':id',
-        component: WorkerComponent
-      }
-    ]
+    // children: [
+    //   {
+    //     path: ':id',
+    //     component: WorkerComponent
+    //   }
+    // ]
   }
 ];
 

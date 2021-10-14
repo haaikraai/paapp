@@ -26,6 +26,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { WorkertableComponent } from './manager/workertable/workertable.component';
 
@@ -63,7 +64,8 @@ import { WorkertableComponent } from './manager/workertable/workertable.componen
     MatDialogModule,
     MatCardModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
